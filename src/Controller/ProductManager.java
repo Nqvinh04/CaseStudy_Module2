@@ -1,10 +1,15 @@
 package Controller;
 
 import ProductModel.Product;
+import ProductModel.SortProductByCreatAmount;
+import ProductModel.SortProductByExp;
+import ProductModel.SortProductByName;
 import ProductStorage.ProductStorage;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.scene.chart.ScatterChart;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ProductManager {
@@ -74,8 +79,21 @@ public class ProductManager {
         }
     }
     // sắp xếp danh sách sản phẩm ra màn hình
-    public  void sortProduct(){
+    public  void sortProductByName(){
+        Collections.sort(productArrayList, new SortProductByName());
+        System.out.println(productArrayList);
+    }
 
+    // Sắp xếp danh sách sp theo ngày sản xuất
+    public void sortProductByExp(){
+        Collections.sort(productArrayList, new SortProductByExp());
+        System.out.println(productArrayList);
+    }
+
+    // Sắp xếp danh sách theo số lượng thùng hàng tồn tại trong kho
+    public void sortProductByCreatAmount(){
+        Collections.sort(productArrayList, new SortProductByCreatAmount());
+        System.out.println(productArrayList);
     }
 
     // Hiển thị danh sách sản phẩm ra màn hình

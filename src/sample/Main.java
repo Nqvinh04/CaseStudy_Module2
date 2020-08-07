@@ -43,19 +43,29 @@ import java.util.Scanner;
                     productId = productManager.inputId();
                     productManager.delete(productId);
                     break;
-//                case "4":
-//                    sortMenu();
-//                    while (true){
-//                        String isChoose = scanner.nextLine();
-//                        switch (isChoose){
-//                            case "1":
-//
-//
-//                        }
-//                    }
-//
-//                    break;
-//                case "5":
+                case "4":
+                    sortMenu();
+                    while (true){
+                        String isChoose = scanner.nextLine();
+                        switch (isChoose){
+                            case "1":
+                                productManager.sortProductByName();
+                                sortMenu();
+                                break;
+                            case "2":
+                                productManager.sortProductByExp();
+                                sortMenu();
+                                break;
+                            case "3":
+                                productManager.sortProductByCreatAmount();
+                                sortMenu();
+                                break;
+                            case "0":
+                                showMenu();
+                                break;
+                        }
+                    }
+                    //                case "5":
 //                    productManager.findProduct();
 //                    break;
                 case "6":
@@ -89,9 +99,10 @@ import java.util.Scanner;
 
     private static void sortMenu(){
         System.out.println("----------Sort----------");
-        System.out.println("1. Từ thấp đến cao");
-        System.out.println("2. Từ cao đến thấp");
-        System.out.println("3. Theo tên");
+        System.out.println("1. Theo Tên");
+        System.out.println("2. Theo Ngày Sản Xuất");
+        System.out.println("3. Theo Số Lượng");
+        System.out.println("0. Thoát");
         System.out.println("-----------------------");
         System.out.println("Vui lòng chọn: ");
     }
