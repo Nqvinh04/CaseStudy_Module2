@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //public class Main extends Application {
@@ -38,7 +40,7 @@ import java.util.Scanner;
                         break;
                     case "2":
                         productId = productManager.inputId();
-                        productManager.edit(productId);
+                        productManager.editId(productId);
                         break;
                     case "3":
                         productId = productManager.inputId();
@@ -55,6 +57,7 @@ import java.util.Scanner;
                                     break;
                                 case "2":
                                     productManager.sortProductByExp();
+//                                    productManager.show();
                                     sortMenu();
                                     break;
                                 case "3":
@@ -62,16 +65,38 @@ import java.util.Scanner;
                                     sortMenu();
                                     break;
                                 case "0":
+                                    System.out.println("Thoát sắp xếp! Quay lại màn hình chính");
                                     showMenu();
+                                    break;
                             }
-                            break;
                         }
-                        break;
+                    case "5":
+                        findMenu();
+                        while (true){
+                            String findChoose = scanner.nextLine();
+                            switch (findChoose) {
+                                case "1":
+                                    System.out.println("Nhập tên sản phẩm cần tìm: ");
+                                    String productName = scanner.nextLine();
+                                    productManager.findProductByName(productName);
+                                    break;
+                                case  "2":
+                                    System.out.println("Nhập mã số sản phầm cần tìm: ");
+                                    int productInt = Integer.parseInt(scanner.nextLine());
+                                    productManager.findProductById(productInt);
+                                    break;
+                                case "0":
+                                    System.out.println("Thoát tìm kiếm! Quay lại màn hình chính");
+                                    showMenu();
+                                    break;
+                            }
+                        }
                     case "6":
                         productManager.show();
                         break;
                     case "0":
                         System.out.println("Thoát!");
+                        break;
                     default:
                         System.out.println("Không hợp lệ! Vui lòng chọn hành động trong menu bên dưới:");
                         break;
@@ -79,7 +104,7 @@ import java.util.Scanner;
                 if (exit) {
                     break;
                 }
-                showMenu();
+//                showMenu();
             }
         }
 

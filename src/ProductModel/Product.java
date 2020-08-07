@@ -77,13 +77,13 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "%5d," + id +
+        return "Product: " +
+                "Mã sản phẩm" + id +
                 ", Tên sẩn phẩm = '" + name + '\'' +
                 ", Ngày sản xuất = '" + exp + '\'' +
                 ", Giá = " + price +
                 ", Số lượng (trong 1 thùng) = " + amount +
                 ", Số thùng = " + creatAmount +
-                '}';
+                '.';
     }
 }

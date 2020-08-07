@@ -40,7 +40,7 @@ public class ProductManager {
 
     // Chỉnh sửa thông tin sản phẩm
     // Chỉnh sửa theo id
-    public void edit(int id) {
+    public void editId(int id) {
         boolean isExisted = false; // kiểm tra mã số sp có tồn tại
         int size = productArrayList.size();
         for (int i = 0; i < size; i++) {
@@ -58,6 +58,24 @@ public class ProductManager {
             System.out.printf("id = %d không tồn tại.\n", id);
         } else {
             productStorage.write(productArrayList);
+        }
+    }
+
+    // Tìm sản phẩm theo tên
+    public void findProductByName(String name){
+        for (Product productNameList : productArrayList){
+            if (productNameList.getName().equals(name)){
+                System.out.println(productNameList);
+            }
+        }
+    }
+
+    // Tìm sản phẩm theo mã sản phẩm
+    public void findProductById(int id){
+        for (Product productInt : productArrayList){
+            if (productInt.getId() == id){
+                System.out.println(productInt);
+            }
         }
     }
 
