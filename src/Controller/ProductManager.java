@@ -102,12 +102,12 @@ public class ProductManager {
         productArrayList = productStorage.read();
 //        System.out.println(productArrayList);
         for (Product productL: productArrayList){
-            System.out.printf("%5d,", productL.getId());
+            System.out.printf("%5d," , productL.getId());
             System.out.printf("%20s,", productL.getName());
             System.out.printf("%20s,",productL.getExp());
-            System.out.printf("%10.1f,", productL.getPrice());
-            System.out.printf("%5d,", productL.getAmount());
-            System.out.printf("%5d%n",productL.getCreatAmount());
+            System.out.printf("%10.1f " + "VND,", productL.getPrice());
+            System.out.printf("%5d " + "gói/Thùng,", productL.getAmount());
+            System.out.printf("%5d " + "Thùng%n",productL.getCreatAmount());
         }
     }
 
