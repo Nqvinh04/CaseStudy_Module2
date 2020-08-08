@@ -20,6 +20,7 @@ public class ProductManager {
 
 
 
+
     public ProductManager(){
         productStorage = new ProductStorage();
         productArrayList = productStorage.read();
@@ -38,25 +39,98 @@ public class ProductManager {
         productStorage.write(productArrayList); // Thêm list danh sách sản phẩm vào file
     }
 
-    // Chỉnh sửa thông tin sản phẩm
-    // Chỉnh sửa theo id
-    public void editId(int id) {
-        boolean isExisted = false; // kiểm tra mã số sp có tồn tại
-        int size = productArrayList.size();
-        for (int i = 0; i < size; i++) {
-            if (productArrayList.get(i).getId() == id){
+//    // Chỉnh sửa thông tin sản phẩm
+//    // Chỉnh sửa theo id
+//    public void editId(int id) {
+//        boolean isExisted = false; // kiểm tra mã số sp có tồn tại
+//        int size = productArrayList.size();
+//        for (Product product : productArrayList) {
+//            if (product.getId() == id) {
+//                isExisted = true;
+//                product.setName(inputName());
+//                product.setExp(inputExp());
+//                product.setPrice(inputPrice());
+//                product.setAmount(inputAmount());
+//                product.setCreatAmount(inputCreatAmount());
+//                break;
+//            }
+//        }
+//        if (!isExisted){
+//            System.out.printf("id = %d không tồn tại.\n", id);
+//        } else {
+//            productStorage.write(productArrayList);
+//        }
+//    }
+
+     //Chỉnh sửa thông tin id
+    public void editProductById(ArrayList<Product> productArrayList){
+        boolean isExisted = false;
+        System.out.println("Nhập mã sản phẩm bạn cần thay đổi: ");
+        int Id = Integer.parseInt(scanner.nextLine());
+        for (Product product: productArrayList){
+            if (product.getId() == Id){
                 isExisted = true;
-                productArrayList.get(i).setName(inputName());
-                productArrayList.get(i).setExp(inputExp());
-                productArrayList.get(i).setPrice(inputPrice());
-                productArrayList.get(i).setAmount(inputAmount());
-                productArrayList.get(i).setCreatAmount(inputCreatAmount());
+                product.setId(inputId());
                 break;
             }
         }
         if (!isExisted){
-            System.out.printf("id = %d không tồn tại.\n", id);
+            System.out.println("id: %d không tồn tại");
+        } else  {
+            productStorage.write(productArrayList);
+        }
+    }
+
+    // Chỉnh sửa thông tin  tên
+    public void editProductByName(ArrayList<Product> productArrayList){
+        boolean isExisted = false;
+        System.out.println("Nhập tên sản phẩm bạn cần thay đổi");
+        String Name = scanner.nextLine();
+        for (Product product: productArrayList){
+            if (product.getName().equals(Name)){
+                isExisted = true;
+                product.setName(inputName());
+            }
+        }
+        if (!isExisted){
+            System.out.println("Name: %20s không tồn tại");
         } else {
+            productStorage.write(productArrayList);
+        }
+    }
+    // Chỉnh sửa giá sản phẩm
+    public void editProductByPrice(ArrayList<Product> productArrayList){
+        boolean isExisted = false;
+        System.out.println("Nhập mã sản phẩm bạn cần thay đổi: ");
+        int Id = Integer.parseInt(scanner.nextLine());
+        for (Product product: productArrayList){
+            if (product.getId() == Id){
+                isExisted = true;
+                product.setPrice(inputPrice());
+                break;
+            }
+        }
+        if (!isExisted){
+            System.out.println("id: %d không tồn tại");
+        } else  {
+            productStorage.write(productArrayList);
+        }
+    }
+    // Chỉnh sửa số lượng(gói/ thùng)
+    public void editProductByAmount(ArrayList<Product> productArrayList){
+        boolean isExisted = false;
+        System.out.println("Nhập mã sản phẩm bạn cần thay đổi: ");
+        int Id = Integer.parseInt(scanner.nextLine());
+        for (Product product: productArrayList){
+            if (product.getId() == Id){
+                isExisted = true;
+                product.setAmount(inputAmount());
+                break;
+            }
+        }
+        if (!isExisted){
+            System.out.println("id: %d không tồn tại");
+        } else  {
             productStorage.write(productArrayList);
         }
     }
@@ -79,6 +153,7 @@ public class ProductManager {
         }
     }
 
+
     // Xóa phần tử
     public void delete(int id){
         Product product = null;
@@ -96,6 +171,22 @@ public class ProductManager {
             System.out.printf("id = %d không tồn tại.\n", id);
         }
     }
+//    // Xóa phần tử 1
+//    public void delete(ArrayList<Product> productArrayList){
+//        Product product = new Product();
+//        int size = productArrayList.size();
+//        System.out.println("Nhập Mã số sản phẩm bạn muốn xóa: ");
+//        int deleteId = Integer.parseInt(scanner.nextLine());
+//        for (int i = 0; i < size; i++){
+//            if(productArrayList.get(i).getId() == deleteId){
+//                product = productArrayList.get(i);
+//                productArrayList.remove(product);
+//                break;
+//            }
+//        }
+//        productStorage.write(productArrayList);
+
+
     // sắp xếp danh sách sản phẩm ra màn hình
     public  void sortProductByName(){
         Collections.sort(productArrayList, new SortProductByName());
@@ -118,6 +209,7 @@ public class ProductManager {
     public void show(){
         //ArrayList<Product> productList = productArrayList;
         productArrayList = productStorage.read();
+
 //        System.out.println(productArrayList);
         for (Product productL: productArrayList){
             System.out.printf("%5d," , productL.getId());
