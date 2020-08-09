@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="533.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProductManager">
+   <children>
+      <SplitMenuButton layoutX="387.0" layoutY="121.0" mnemonicParsing="false" text="Edit">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <SplitMenuButton layoutX="565.0" layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Sắp xếp">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </SplitMenuButton>
+      <Button layoutX="387.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Save" />
+      <Button layoutX="386.0" layoutY="78.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Add" />
+      <Button layoutX="386.0" layoutY="167.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Delete" />
+      <TableView layoutX="4.0" layoutY="271.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="256.0" prefWidth="737.0">
+        <columns>
+          <TableColumn prefWidth="56.0" text="Mã SP" />
+          <TableColumn prefWidth="113.0" text="Tên Sản Phẩm" />
+            <TableColumn prefWidth="77.0" text="Số Lượng" />
+            <TableColumn prefWidth="71.0" text="Quy Cách" />
+            <TableColumn prefWidth="71.0" text="Đơn Giá">
+               <columns>
+                  <TableColumn prefWidth="71.0" text="Lẻ" />
+                  <TableColumn prefWidth="71.0" text="Thùng" />
+               </columns>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Label layoutX="25.0" layoutY="82.0" text="Mã Sản Phẩm" />
+      <Label layoutX="24.0" layoutY="125.0" text="Tên Sản Phẩm" />
+      <Label layoutX="25.0" layoutY="171.0" text="Số Lượng" />
+      <Label layoutX="24.0" layoutY="217.0" text="Đơn giá" />
+      <TextField layoutX="118.0" layoutY="78.0" />
+      <TextField layoutX="118.0" layoutY="121.0" />
+      <TextField layoutX="118.0" layoutY="167.0" />
+      <TextField layoutX="118.0" layoutY="213.0" />
+      <SplitMenuButton layoutX="526.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="175.0" text="Tim kiếm Theo">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Tên" />
+            <MenuItem mnemonicParsing="false" text="Mã Sản Phẩm" />
+         </items>
+      </SplitMenuButton>
+      <Button layoutX="636.0" layoutY="188.0" mnemonicParsing="false" text="Tim kiếm" />
+      <TextField layoutX="526.0" layoutY="155.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label alignment="CENTER" layoutX="552.0" layoutY="86.0" prefHeight="17.0" prefWidth="124.0" text="Tìm Sản Phẩm" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="274.0" layoutY="14.0" text="Danh Sách Sản Phẩm" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="-7.0" layoutY="58.0" prefHeight="6.0" prefWidth="752.0" />
+   </children>
+</AnchorPane>

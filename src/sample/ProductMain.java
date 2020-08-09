@@ -2,11 +2,12 @@ package sample;
 
 import Controller.ProductManager;
 import ProductModel.Product;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-public class ProductMain {
+public class ProductMain extends Application {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -141,4 +142,8 @@ public class ProductMain {
         }
     }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+    }
 }
