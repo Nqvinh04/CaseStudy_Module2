@@ -1,4 +1,6 @@
-package ProductModel;
+package Controller;
+
+import ProductModel.Product;
 
 import java.util.Comparator;
 

@@ -1,12 +1,7 @@
 package Controller;
 
 import ProductModel.Product;
-import ProductModel.SortProductByCreatAmount;
-import ProductModel.SortProductByExp;
-import ProductModel.SortProductByName;
 import ProductStorage.ProductStorage;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import javafx.scene.chart.ScatterChart;
 
 import java.util.ArrayList;
 import java.util.Collections;
